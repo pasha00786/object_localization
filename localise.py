@@ -8,7 +8,7 @@ import cv2
 #reading the image 
 path = './test/'
 src = 'JPEG_20160622_110649_1000527459853.png'
-image = cv2.imread('6.png')
+image = cv2.imread('1.png')
 edged = cv2.Canny(image, 10, 250)
 # cv2.imshow("Edges", edged)
 # cv2.waitKey(0)
@@ -34,6 +34,7 @@ if len(cnts) != 0:
 	# draw the book contour (in green)
 	cv2.rectangle(image,(x,y),(x+w,y+h),(0,255,0),2)
 	cv2.imshow("image", image)
+	cv2.imwrite('localised_image.png', image)
 	cv2.waitKey(0)
 	# cv2.imwrite('test_output/'+src, image)
 # 	row = [src, x, x+w, y, y+h]
